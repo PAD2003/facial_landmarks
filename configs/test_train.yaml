@@ -1,0 +1,4 @@
+defaults:
+  - data: dlib.yaml
+  - model: dlib.yaml
+  - _self_

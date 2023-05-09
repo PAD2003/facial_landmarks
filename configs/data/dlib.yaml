@@ -1,0 +1,27 @@
+_target_: src.data.dlib_datamodule.DlibDataModule
+
+defaults:
+  - transform_train: cutout.yaml
+  - transform_val: default.yaml
+  - _self_
+
+data_train: 
+  _target_: src.data.components.dlib_dataset.DlibDataset
+  _partial_: true
+  xml_file: labels_ibug_300W_train.xml
+
+data_test:
+  _target_: src.data.components.dlib_dataset.DlibDataset
+  _partial_: true
+  xml_file: labels_ibug_300W_test.xml
+
+# data_dir: data/ibug_300W_large_face_landmark_dataset
+data_dir: ${paths.data_dir}/ibug_300W_large_face_landmark_dataset
+
+train_val_test_split: [5666, 1000]
+
+batch_size: 16
+
+num_workers: 2
+
+pin_memory: false
