@@ -66,6 +66,7 @@ model.load_state_dict(torch.load(f="deploy/checkpoints/last3.pth"))
 # get all filenames
 folder = "deploy/data/"
 files = os.listdir(folder)
+files = ["barack-obama-500.jpg"]
 
 for file in files:
     # prepare input

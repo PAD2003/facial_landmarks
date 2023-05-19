@@ -23,7 +23,7 @@ VISUALIZE_FACE_POINTS = False
 VISUALIZE_FILTER = True
 source = 0
 # source = "deploy/data/IMG_1842.MOV"
-source = "deploy/data/test_2.png"
+# source = "deploy/data/barack-obama-500.jpg"
 
 # config for filter
 filters_config = {
@@ -217,9 +217,12 @@ while(cap.isOpened()):
 
             # prepare input image: crop & transform
             input_image = frame_image.crop(box=(box["x"], box["y"], box["x"] + box["w"], box["y"] + box["h"]))
-            landmarks = get_landmarks(input_image)
+
+            # 1. Points2
+            landmarks = get_landmarks(input_image) 
             points2 = landmarks.tolist()
 
+            # 2. Optical Flow
             ################ Optical Flow and Stabilization Code #####################
             img2Gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
@@ -258,6 +261,8 @@ while(cap.isOpened()):
                     img1_alpha = filter_runtime['img_a']
 
                     if filter["morph"]:
+                        # 3. Delaunay Triangulation & 4. Apply Filter
+
                         hull1 = filter_runtime['hull']
                         hullIndex = filter_runtime['hullIndex']
                         dt = filter_runtime['dt']
@@ -322,15 +327,15 @@ while(cap.isOpened()):
                 for i, l in enumerate(landmarks):
                     x = int(l[0])
                     y = int(l[1])
-                    cv2.circle(frame, (x, y), 3, (0, 255, 0), -1)
-                    cv2.putText(frame, str(i), (x, y), cv2.FONT_HERSHEY_SIMPLEX, .6, (255, 255, 255), 1)
+                    cv2.circle(frame, (x, y), 2, (0, 255, 0), -1)
+                    # cv2.putText(frame, str(i), (x, y), cv2.FONT_HERSHEY_SIMPLEX, .6, (255, 255, 255), 1)
                 
-                # draw boxs
-                x1 = int(box["x"])
-                y1 = int(box["y"])
-                x2 = int(box["x"] + box["w"])
-                y2 = int(box["y"] + box["h"])
-                cv2.rectangle(frame, (x1, y1), (x2, y2), color=(0, 255, 0))
+                # # draw boxs
+                # x1 = int(box["x"])
+                # y1 = int(box["y"])
+                # x2 = int(box["x"] + box["w"])
+                # y2 = int(box["y"] + box["h"])
+                # cv2.rectangle(frame, (x1, y1), (x2, y2), color=(0, 255, 0))
         
     if source == 0:
         # # fps
