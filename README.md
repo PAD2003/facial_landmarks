@@ -13,7 +13,7 @@
 
 ## Description
 
-Use a deep learning model to annotate landmarks on the face.
+Using a deep learning model to annotate landmarks on the face.
 
 ## Installation
 
@@ -24,29 +24,10 @@ Use a deep learning model to annotate landmarks on the face.
 git clone https://github.com/YourGithubName/your-repo-name
 cd your-repo-name
 
-# [OPTIONAL] create conda environment
+# create conda environment
 conda create -n myenv python=3.9
 conda activate myenv
-
-# install pytorch according to instructions
-# https://pytorch.org/get-started/
-
-# install requirements
 pip install -r requirements.txt
-```
-
-#### Conda
-
-```bash
-# clone project
-git clone https://github.com/YourGithubName/your-repo-name
-cd your-repo-name
-
-# create conda environment and install dependencies
-conda env create -f environment.yaml -n myenv
-
-# activate conda environment
-conda activate myenv
 ```
 
 ## How to run
@@ -59,12 +40,6 @@ python src/train.py trainer=cpu
 
 # train on GPU
 python src/train.py trainer=gpu
-```
-
-Train model with chosen experiment configuration from [configs/experiment/](configs/experiment/)
-
-```bash
-python src/train.py experiment=experiment_name.yaml
 ```
 
 You can override any parameter from command line like this
