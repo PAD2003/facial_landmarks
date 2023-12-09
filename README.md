@@ -13,7 +13,7 @@
 
 ## Description
 
-In filter project, we are developing an application that applies filters to human faces in an image. Specifically, we use YOLO5Face for face detection, ResNet18 for facial landmarks detection, and then apply filters to the faces using Delaunay triangulation and affine transformation. In this report, we will provide detailed explanations for each part: YOLO5Face, facial landmarks detection, and the filter application.
+In filter project, we are developing an application that applies filters to human faces in an image. Specifically, we use YOLO5Face for face detection, ResNet18 for facial landmarks detection, and then apply filters to the faces using Delaunay triangulation and affine transformation.
 
 In this repository, I implement the training process for the ResNet18 model for facial landmarks detection using [the IBUG 300w dataset](https://www.kaggle.com/datasets/toxicloser/ibug-300w-large-face-landmark-dataset). You can refer to the implementation of other parts here.
 
