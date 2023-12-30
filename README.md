@@ -23,6 +23,7 @@ In this repository, I implement the training process for the ResNet18 model for 
 
 ## Contributors
 - 21021481 - Phan Anh Duc
+- 21020522 - Hoang Hung Manh
 
 ## Installation
 
