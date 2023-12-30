@@ -25,7 +25,7 @@ In this repository, I implement the training process for the ResNet18 model for 
 - 21021481 - Phan Anh Duc
 - 21020522 - Hoang Hung Manh
 - 21020477 - Dao Thi Kim Thinh
-
+- 21020467 - Nguyen Thi Thuy Huong
 ## Installation
 
 ### Pip
