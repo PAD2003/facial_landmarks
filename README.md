@@ -21,11 +21,6 @@ In this repository, I implement the training process for the ResNet18 model for 
 - [Web application repository applying filters to human faces](https://github.com/PAD2003/apply_filter.git)
 - [Docker image of a web application applying filters to human faces](https://hub.docker.com/r/pad2003/apply_filter_web_application)
 
-## Contributors
-- 21021481 - Phan Anh Duc
-- 21020522 - Hoang Hung Manh
-- 21020477 - Dao Thi Kim Thinh
-- 21020467 - Nguyen Thi Thuy Huong
 ## Installation
 
 ### Pip
